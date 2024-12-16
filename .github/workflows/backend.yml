@@ -34,4 +34,4 @@ jobs:
           WEATHER_API_KEY: ${{secrets.WEATHER_API_KEY}}
         run: |
           cd backend
-          npm start
+          npm run start
