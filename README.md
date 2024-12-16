@@ -53,4 +53,10 @@ To start the application, run the following commands in separate terminal window
    npm start
    ```
 
+3. To run backend tests:
+   ```bash
+   cd backend
+   npm test
+   ```
+
 Open your browser and go to `http://localhost:3001` to view the app.
