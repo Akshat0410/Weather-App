@@ -33,6 +33,6 @@ jobs:
       - name: Run backend service
         env:
           WEATHER_API_KEY: ${{secrets.WEATHER_API_KEY}}
-        run:
+        run: |
           cd backend
           npm run start
