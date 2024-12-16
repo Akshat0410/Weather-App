@@ -28,10 +28,10 @@ jobs:
         run: |
           cd backend
           npm install
+          npm install --save-dev nodemon
 
       - name: Run backend service
         env:
           WEATHER_API_KEY: ${{secrets.WEATHER_API_KEY}}
         run: |
-          cd backend
           npm run start
