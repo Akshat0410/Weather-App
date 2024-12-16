@@ -1,17 +1,17 @@
-import Head from "next/head";
+import Head from "next/head"; // Importing Head component for managing the document head
 
-import styles from "./page.module.css";
-import WeatherForm from "./components/WeatherForm/WeatherForm";
+import styles from "./page.module.css"; // Importing CSS module for styling
+import WeatherForm from "./components/WeatherForm/WeatherForm"; // Importing WeatherForm component
 
-export default function Home() {
+export default function Home() { // Main functional component for the Home page
   return (
-    <div className={styles.container}>
+    <div className={styles.container}> {/* Main container for the app */}
       <Head>
-        <title>Weather App</title>
+        <title>Weather App</title> {/* Title of the web page */}
       </Head>
-      <main className={styles.main}>
-        <h1 className={styles.title}>Weather App</h1>
-        <WeatherForm />
+      <main className={styles.main}> {/* Main content area */}
+        <h1 className={styles.title}>Weather App</h1> {/* Main heading */}
+        <WeatherForm /> {/* Weather form component for user input */}
       </main>
     </div>
   );

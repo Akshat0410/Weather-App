@@ -5,43 +5,47 @@ import axios from "axios";
 import styles from "./WeatherForm.module.css";
 
 const WeatherForm = () => {
+  // State variables for city input, weather data, and error messages
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState("");
 
   useEffect(() => {
+    // Fetch location when the component loads first
     navigator.geolocation.getCurrentPosition(
       async (position) => {
         const { latitude, longitude } = position.coords;
         try {
+          // Fetch weather data based on the user's current location
           const response = await axios.get(
             `http://localhost:3001/api/weather?lat=${latitude}&lon=${longitude}`
           );
           setWeather(response.data);
-          setCity(response.data.name);
+          setCity(response.data.name); // Set city based on fetched data
         } catch (err) {
-          setError("Error fetching weather data");
+          setError("Error fetching weather data"); // Handle fetch error
         }
       },
       (err) => {
-        setError("Unable to retrieve location");
+        setError("Unable to retrieve location"); // Handle location retrieval error
       }
     );
   }, []);
 
   const getWeather = async () => {
     try {
+      // Fetch weather data based on user-input city
       const response = await axios.get(
         `http://localhost:3001/api/weather?city=${city}`
       );
       setWeather(response.data);
-      setError("");
+      setError(""); // Clear any previous error messages
     } catch (err) {
-      setError("Error fetching weather data");
+      setError("Error fetching weather data"); // Handle fetch error
     }
   };
 
-  console.log("weather", weather);
+  console.log("weather", weather); // Log weather data for debugging
 
   return (
     <div className={styles.container}>
@@ -49,7 +53,7 @@ const WeatherForm = () => {
         <input
           type="text"
           value={city}
-          onChange={(e) => setCity(e.target.value)}
+          onChange={(e) => setCity(e.target.value)} // Update city state on input change
           placeholder="Enter city name"
           className={styles.input}
         />
@@ -57,7 +61,7 @@ const WeatherForm = () => {
           Get Weather
         </button>
       </div>
-      {error && <p className={styles.error}>{error}</p>}
+      {error && <p className={styles.error}>{error}</p>} // Display error message if exists
       {weather && error === "" && (
         <div className={styles.weatherCard}>
           <div className={styles.mainInfo}>
