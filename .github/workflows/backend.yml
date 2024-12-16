@@ -22,7 +22,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "14" # Specify your Node.js version
+          node-version: "20"
 
       - name: Install dependencies
         run: |
@@ -31,7 +31,7 @@ jobs:
 
       - name: Run backend service
         env:
-          WEATHER_API_KEY: ${{secrets.WEATHER_API_KEY}} # Fetching secret from GitHub Secrets
+          WEATHER_API_KEY: ${{secrets.WEATHER_API_KEY}}
         run: |
           cd backend
           npm start
