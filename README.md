@@ -65,3 +65,5 @@ To start the application, run the following commands in separate terminal window
    ```
 
 Open your browser and go to `http://localhost:3001` to view the app.
+
+![Weather App Screenshot](app.png)

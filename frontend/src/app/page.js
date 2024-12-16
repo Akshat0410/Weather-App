@@ -10,7 +10,6 @@ export default function Home() { // Main functional component for the Home page
         <title>Weather App</title> {/* Title of the web page */}
       </Head>
       <main className={styles.main}> {/* Main content area */}
-        <h1 className={styles.title}>Weather App</h1> {/* Main heading */}
         <WeatherForm /> {/* Weather form component for user input */}
       </main>
     </div>
