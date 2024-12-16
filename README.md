@@ -37,6 +37,11 @@ To install the Weather-App, follow these steps:
      cd ../backend
      npm install
      ```
+4. Create a `.env` file in the backend directory to store your environment variables. Add the following line to the `.env` file:
+   ```
+   WEATHER_API_KEY=your_api_key_here
+   ```
+   Replace `your_api_key_here` with your actual API key. Note that the API key should be kept secret and is fetched from GitHub Secrets in production environments.
 
 ## Usage
 To start the application, run the following commands in separate terminal windows:
