@@ -1,4 +1,4 @@
-require('dotenv').config(); //Store API Key in .env for local builds
+// require('dotenv').config(); //Store API Key in .env for local builds
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
