@@ -1,12 +1,10 @@
-# .github/workflows/backend.yml
 name: Backend Service
 
 on:
   push:
     branches:
-      - main # Change this to your default branch if different
+      - main
 
-# Add this permissions block
 permissions:
   contents: read
   id-token: write
@@ -30,9 +28,7 @@ jobs:
           npm install
           npm install --save-dev nodemon
 
-      - name: Run backend service
-        env:
-          WEATHER_API_KEY: ${{secrets.WEATHER_API_KEY}}
+      - name: Run tests
         run: |
           cd backend
-          npm run start
+          npm test
